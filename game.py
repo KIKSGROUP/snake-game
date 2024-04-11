@@ -1,47 +1,36 @@
-import turtle
-import time
+
+import tkinter
 import random
-
-delay = 0.1
-
-# Score
+ROWS = 25
+COLS = 25
+TILE_SIZE = 25
+WINDOW_WIDTH = TILE_SIZE * COLS #25*25 = 625
+WINDOW_HEIGHT = TILE_SIZE * ROWS #25*25 = 625
+class Tile:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+#game window
+window = tkinter.Tk()
+window.title("Snake")
+window.resizable(False, False)
+canvas = tkinter.Canvas(window, bg = "black", width = WINDOW_WIDTH, height = WINDOW_HEIGHT, borderwidth = 0, highlightthickness = 0)
+canvas.pack()
+window.update()
+#center the window
+window_width = window.winfo_width()
+window_height = window.winfo_height()
+screen_width = window.winfo_screenwidth()
+screen_height = window.winfo_screenheight()
+window_x = int((screen_width/2) - (window_width/2))
+window_y = int((screen_height/2) - (window_height/2))
+#format "(w)x(h)+(x)+(y)"
+window.geometry(f"{window_width}x{window_height}+{window_x}+{window_y}")
+#initialize game
+snake = Tile(TILE_SIZE * 5, TILE_SIZE * 5) #single tile, snake's head
+food = Tile(TILE_SIZE * 10, TILE_SIZE * 10)
+velocityX = 0
+velocityY = 0
+snake_body = [] #multiple snake tiles
+game_over = False
 score = 0
-high_score = 0
-
-# Set up the screen
-wn = turtle.Screen()
-wn.title("snake xenzia game by ivy kimberly and keith ")
-wn.bgcolor("green")
-wn.setup(width=600, height=600)
-wn.tracer(0) 
-
-# Snake head
-head = turtle.Turtle()
-head.speed(0)
-head.shape("square")
-head.color("black")
-head.penup()
-head.goto(0,0)
-head.direction = "stop"
-
-# Snake food
-food = turtle.Turtle()
-food.speed(0)
-food.shape("circle")
-food.color("red")
-food.penup()
-food.goto(0,100)
-
-segments = []
-
-# Pen
-pen = turtle.Turtle()
-pen.speed(0)
-pen.shape("square")
-pen.color("white")
-pen.penup()
-pen.hideturtle()
-pen.goto(0, 260)
-pen.write("Score: 0  High Score: 0", align="center", font=("Courier", 24, "normal"))
-
-
