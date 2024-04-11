@@ -1,1 +1,4 @@
-<h1>SNAKE GAME</h1>z
+<h1>SNAKE GAME</h1>
+
+> modify Readme file
+
