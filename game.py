@@ -109,8 +109,7 @@ def move():
             tile.y = prev_tile.y
     snake.x += velocityX * TILE_SIZE
     snake.y += velocityY * TILE_SIZE
-    
-    # Check for collision with trap
+   
     if snake.x == trap.x and snake.y == trap.y:
         game_over = True
 

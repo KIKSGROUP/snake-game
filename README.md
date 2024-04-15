@@ -1,5 +1,6 @@
 <h1>SNAKE GAME<h1>
 
+<<<<<<< HEAD
 
 <p>The sheet is made of 25rows and 25columns
 The snake atn (5,5) , each cube has 10pixels on the X and Y axis
@@ -22,3 +23,5 @@ Adding velocity != 1 (is not equal to one) is to prevent the snake moving upward
 Adding velocity != 1 (is not equal to one) is to prevent the snake moving to the left since it is already moving right (right arrow button)
 Adding velocity != 1 (is not equal to one) is to prevent the snake moving to the right since it is already moving left (left arrow button)<p>
 
+=======
+>>>>>>> bbbd00784ad3ad3a662c1ff7d6cd7b0916e146b0
